@@ -1,0 +1,50 @@
+#include <iomanip>
+#include <iostream>
+using namespace std;
+
+struct Aluno{
+	string nome;
+	int matricula;
+	float nota1, nota2, nota3;
+	float media;
+};
+
+
+int main(){
+	Aluno arr[3];
+	// FOR PARA ATRIBUIR OS VALORES AOS ARRAYS DA ESTRUTURA
+	for (int i = 0; i < 3; i++){
+		string tempnome;
+		int tempmat;
+		float tempnota1, tempnota2, tempnota3;
+		cout << "Digite o Nome do aluno " << i + 1 << ": " << endl;
+    cin >> tempnome;
+		cout << "Digite a matricula do aluno " << i + 1 << ": " << endl;
+		cin >> tempmat;
+		cout << "Digite a nota 1 do aluno " << i + 1 << ": " << endl;
+		cin >> tempnota1;
+		cout << "Digite a nota 2 do aluno " << i + 1  << ": " << endl;
+		cin >> tempnota2;
+		cout << "Digite a nota 3 do aluno " << i + 1  << ": " << endl;
+		cin >> tempnota3;
+		float tempmedia = (tempnota1 + tempnota2 + tempnota3) / 3;
+		arr[i].nome = tempnome;
+		arr[i].matricula = tempmat;
+		arr[i].nota1 = tempnota1;
+		arr[i].nota2 = tempnota2;
+		arr[i].nota3 = tempnota3;
+		arr[i].media = tempmedia;
+	}
+	
+	for (int i = 0; i < 3; i++){
+		cout << "Aluno " << i + 1 << ": " << endl;
+		cout << "Nome: " << arr[i].nome << endl;
+		cout << "Matricula: " << arr[i].matricula << endl;
+		cout << "Nota 1: " << arr[i].nota1 << endl;
+		cout << "Nota 2: " << arr[i].nota2 << endl;
+		cout << "Nota 3: " << arr[i].nota3 << endl;
+		cout << "Média: " << arr[i].media << endl;
+	}	
+
+	return 0;
+}
